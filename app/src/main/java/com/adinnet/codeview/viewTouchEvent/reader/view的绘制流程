@@ -1,0 +1,18 @@
+1、视图的绘制过程的三个步骤，分别是测量(Mesure)、布局(Layout)和绘制(Draw)
+
+2、MeasureSpec: 是一个32位的整型值，它的高2位表示测量模式SpecMode{UNSPECIFIED 不指定测量模式，EXACTLY 精确测量模式，AT_MOST 最大值测量模式}，低30表示某种测量模式下的规格大小SpecSize。
+   a、UNSPECIFIED:不指定测量模式，父视图没有限制子视图的大小，子视图可以是想要的任何尺寸，通常用于系统内部，应用开发中很少使用的。
+   b、EXACTLY:精确测量模式，当该视图的layout_width 或者layout_height指定为具体数值或者match_parent时生效，
+   表示父视图已经决定了子视图的精确大小，这种模式下View的测量值就是SpecSize的值。
+   c、AT_MOST:最大值模式，当该视图的layout_width 或者layout_height 指定为wrap_content时生效，此时子视图的尺寸
+   可以是不超过父视图允许的最大尺寸的任何尺寸。
+   d、对DecorView 而言，它的MeasureSpec 由窗口尺寸和起自身的LayoutParams共同决定；对于普通的view，它的
+   MeasureSpec 由父视图的MeasureSpec和其自身的LayoutParams 共同决定。
+
+3、Measure:用来计算view 的实际大小，页面的测量流程是从performMeasure方法开始的。
+   测量操作是分发给ViewGroup的，由ViewGroup在它的measureChild 方法中传递给子View。ViewGroup通过遍历自身所有的子View，并逐个调用子View
+   的measure 方法实现测量操作。最后通过回调onMeasure 方法实现的。
+
+4、Layout ：用来确定View 在父容器中的布局位置的。它是由父容器获取子View的位置参数，调用子View的layout方法并将位置参数传入实现的。
+
+5、Draw：操作用来将控制绘制出来，绘制的流程从performDraw方法开始。
