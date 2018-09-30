@@ -1,0 +1,29 @@
+project.ext{
+    javeVersion = 8
+    javaMaxHeapSize ="4G"
+    compileSdkVersion = 25
+    buildToolVersion = "25.0.2"
+    minSdkVersion = 16
+    targetSdkVersion = 23
+    minifyEnable = true
+    versionCode = 1
+    versionName = "1.0.0"
+    shrinkResEnable = minifyEnable;
+
+    sourceCompatibility = this.&getJavaVersion()
+    targetCompatibility = this.&getJavaVersion()
+}
+
+def getJavaVersion(){
+    switch (project.ext.javeVersion){
+        case "6":
+            return JavaVersion.VERSION_1_6
+        case "7":
+            return JavaVersion.VERSION_1_7
+        case "8":
+            return JavaVersion.VERSION_1_8
+        default:
+            return JavaVersion.VERSION_1_6
+    }
+}
+

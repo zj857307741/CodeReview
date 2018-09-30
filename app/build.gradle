@@ -1,14 +1,15 @@
 apply plugin: 'com.android.application'
+apply from:"${project.rootDir}/common_config.gradle"
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion "27.0.3"
+    compileSdkVersion project.ext.compileSdkVersion
+    buildToolsVersion project.ext.buildToolVersion
     defaultConfig {
         applicationId "com.adinnet.codeview"
-        minSdkVersion 21
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion project.ext.minSdkVersion
+        targetSdkVersion project.ext.targetSdkVersion
+        versionCode project.ext.versionCode
+        versionName project.ext.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
             cmake {

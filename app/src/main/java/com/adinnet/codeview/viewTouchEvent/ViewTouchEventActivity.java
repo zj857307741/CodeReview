@@ -22,6 +22,7 @@ public class ViewTouchEventActivity extends AppCompatActivity implements View.On
     private MyTextView mTextView ;
 
     @Override
+
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_touch_event_activity);

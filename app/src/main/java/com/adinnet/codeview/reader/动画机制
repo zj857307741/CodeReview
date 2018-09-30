@@ -1,0 +1,18 @@
+1、逐帧动画(Frame Animation) 使用的是图片资源 一张图片一帧
+2、补间动画(Tween Animation) 定义动画的开始和结束，并指定动画变化的时间和方式，在由android 系统进行计算，
+通过在关键帧之间插入渐变值来实现平滑过渡，从而对view的内容完成一系列的图形变化来实现的动画效果。
+   a、透明度变化Alpha ; 大小变化Scale ；  位移变化Translate ； 旋转变化Rotate
+   b、插值器Interpolator ：它会根据类型的不同，选择不同的算法计算出在补间动画期间所需要动态插入帧的密度和位置，
+   它负责控制动画的变化速度，使得动画效果能够以匀速、加速、减速、抛物线等多种速度进行变化。
+   c、AlphaAnimation:改变透明度动画
+   d、ScaleAnimation：缩放大小动画
+   e、TranslateAnimation:改变位置动画
+   f、RotateAnimation:旋转动画
+3、属性动画(Property animation):在补间动画中，我们只能改变View的绘制效果，但是View 的真实属性是没有变化的，
+   而属性动画则可以直接改变View 对象的属性值，同时属性动画几乎可以对任何对象执行动画，而不是局限在View对象上，从某种意义上讲，
+   属性动画可以是增强版的补间动画。与补间动画类似，属性动画也涉及到基本的属性。
+4、AnimatorSet: 可以用来组合多个Animator，并指定这些动画是顺序播放还是同时播放。
+5、ValueAnimator：
+6、ObjectAnimator:
+7、Transition Animation:可以让开发者实行activity 或者view的过度效果。和属性动画相比，过度动画最大的不同是需要为动画前后准备不同的布局，
+   并通过对应的api实现两个布局的过渡动画，而属性动画只需要一个布局文件。
