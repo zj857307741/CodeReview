@@ -149,5 +149,6 @@ public class WaveView extends View{
             }
         });
         animator.start();
+
     }
 }

@@ -1,0 +1,6 @@
+MVC
+view ---controller---model
+
+MVP:model 并不会和view 直接通信，
+核心思想：把activity中的UI 逻辑抽象成View 接口，把业务逻辑抽象成Presenter接口，Model还是原来的model。
+view--presenter----model
